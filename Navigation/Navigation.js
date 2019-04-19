@@ -3,6 +3,7 @@ import { createStackNavigator, createAppContainer,createBottomTabNavigator } fro
 import Login from "../Activities/Login"
 import WhyFb from "../Activities/WhyFb";
 import Home from "../Activities/Home";
+import Test from "../Activities/Test";
 
 const TestStackNavigator = createStackNavigator({
 
@@ -17,6 +18,13 @@ const TestStackNavigator = createStackNavigator({
     },
     Home:{
         screen:Home,
+        navigationOptions: {
+            headerLeft: null,
+            title:'Easer'
+        },
+    },
+    Test:{
+        screen:Test,
         navigationOptions: {
         },
     }

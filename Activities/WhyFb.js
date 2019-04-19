@@ -7,7 +7,7 @@ class WhyFb extends React.Component {
     render() {
         return (
             <View style={styles.main_container}>
-                <Text>Détail du film</Text>
+                <Text>You have to connect with facebook  to  enjoy a better experience</Text>
             </View>
         )
     }
