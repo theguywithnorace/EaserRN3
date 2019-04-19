@@ -62,9 +62,11 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     logo_text:{
-        fontSize:35,
-        margin:8,
-        color: 'white'
+        fontSize:40,
+        margin:22,
+        color: 'white',
+        fontFamily:'OratorStd',
+        fontWeight: 'bold'
     },
     FBButton:{
         flexDirection:'row',
@@ -83,14 +85,17 @@ const styles = StyleSheet.create({
     },
     text_connexion:{
         color:'white',
-        fontSize: 18,
+        fontSize: 21,
+       fontFamily: 'WeblySleekUILight',
+      //  fontWeight: 'bold'
+
         // justifyContent:'center',
     },
     text_pq_fb:{
       //  textDecorationLine:'underline',
         color:'grey',
         margin:10,
-        fontSize: 10,
+        fontSize: 9,
         marginBottom:80
     }
 })
