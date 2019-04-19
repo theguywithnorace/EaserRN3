@@ -12,7 +12,7 @@ class Login extends React.Component{
         return(
             <View style={styles.main_container}>
                 <View style={styles.logo_container}>
-                    <Image source={require('../Images/Login/logo_bouteilles_noBackground.png')}
+                    <Image source={require('../../Images/Login/logo_bouteilles_noBackground.png')}
                            style={styles.logo}
                     />
                     <Text style={styles.logo_text}>EASER</Text>
@@ -25,7 +25,7 @@ class Login extends React.Component{
                                       }}
                     >
                         <Image
-                            source={require('../Images/Login/facebook-logo-small.png')}
+                            source={require('../../Images/Login/facebook-logo-small.png')}
                             style={styles.fBLogo}
                         />
                         <Text style={styles.text_connexion}>Connexion</Text>

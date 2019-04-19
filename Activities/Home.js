@@ -5,26 +5,38 @@ import {IndicatorViewPager,PagerTabIndicator, PagerTitleIndicator, PagerDotIndic
 class Home extends React.Component {
 
 
+    _renderTabIndicator() {
+        let tabs = [{
+            iconSource: require('../Images/Login/icone_map.png'),
+            selectedIconSource: require('../Images/Login/icone_map.png'),
+        },{
+            iconSource: require('../Images/Login/fire.png'),
+            selectedIconSource: require('../Images/Login/fire.png'),
 
-    _renderDotIndicator() {
-        return <PagerDotIndicator pageCount={3} />;
+
+        },{
+            iconSource: require('../Images/Login/message.png'),
+            selectedIconSource: require('../Images/Login/message.png'),
+
+        }];
+        return <PagerTabIndicator tabs={tabs} />;
     }
 
     render() {
         return (
             <View style={{flex:1}}>
                 <IndicatorViewPager
-                    style={{flex:1}}
-                    indicator={this._renderDotIndicator()}
+                    style={{flex:1,  backgroundColor:'white'}}
+                    indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>Map</Text>
+                        <Text>page one</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Text>Profiles</Text>
+                        <Text>page two</Text>
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
-                        <Text>Messages</Text>
+                        <Text>page three</Text>
                     </View>
                 </IndicatorViewPager>
             </View>

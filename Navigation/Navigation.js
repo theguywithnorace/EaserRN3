@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator, createAppContainer,createBottomTabNavigator } from 'react-navigation'
-import Login from "../Activities/Login"
-import WhyFb from "../Activities/WhyFb";
+import Login from "../Activities/Login/Login"
+import WhyFb from "../Activities/Login/WhyFb";
 import Home from "../Activities/Home";
 import Test from "../Activities/Test";
 
