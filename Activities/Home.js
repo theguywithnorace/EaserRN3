@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text,  } from 'react-native'
 import {IndicatorViewPager,PagerTabIndicator, PagerTitleIndicator, PagerDotIndicator } from 'rn-viewpager'
+import Test from'./Test'
 
 class Home extends React.Component {
 
@@ -30,10 +31,10 @@ class Home extends React.Component {
                     indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>page one</Text>
+                        <Text>MAP</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Text>page two</Text>
+                        <Test/>
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
                         <Text>page three</Text>
