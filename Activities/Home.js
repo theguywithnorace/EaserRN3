@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text,  } from 'react-native'
 import {IndicatorViewPager,PagerTabIndicator, PagerTitleIndicator, PagerDotIndicator } from 'rn-viewpager'
 import Swiper from './Swiper'
+import Map from './Map'
 
 class Home extends React.Component {
 
@@ -31,7 +32,7 @@ class Home extends React.Component {
                     indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>MAP</Text>
+                        <Map/>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                         <Swiper/>
