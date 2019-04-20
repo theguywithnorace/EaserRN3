@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text,  } from 'react-native'
 import {IndicatorViewPager,PagerTabIndicator, PagerTitleIndicator, PagerDotIndicator } from 'rn-viewpager'
-import Test from'./Test'
+import Swiper from './Swiper'
 
 class Home extends React.Component {
 
@@ -34,7 +34,7 @@ class Home extends React.Component {
                         <Text>MAP</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Test/>
+                        <Swiper/>
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
                         <Text>page three</Text>

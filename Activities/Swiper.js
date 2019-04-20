@@ -1,10 +1,9 @@
 import React from 'react'
 import { StyleSheet, View, Image,Text,TouchableOpacity  } from 'react-native'
-import {IndicatorViewPager,PagerTabIndicator, PagerTitleIndicator, PagerDotIndicator } from 'rn-viewpager'
 import CardStack, { Card } from 'react-native-card-stack-swiper';
 
 
-class Test extends React.Component {
+class Swiper extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
@@ -96,7 +95,11 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     button:{
-
+        shadowColor: 'rgba(0,0,0,0.3)',
+        shadowOffset: {
+            width: 0,
+            height: 1
+        },
         shadowOpacity:0.5,
         backgroundColor:'#fff',
         alignItems:'center',
@@ -128,4 +131,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Test
+export default Swiper

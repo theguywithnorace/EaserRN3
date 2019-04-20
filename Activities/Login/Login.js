@@ -33,7 +33,7 @@ class Login extends React.Component{
                 </View>
                 <TouchableOpacity
                                 onPress={() => {
-                                    this.props.navigation.navigate("Test")
+                                    this.props.navigation.navigate("Swiper")
                                 }}
                 >
                     <Text style={styles.text_pq_fb}>Pourquoi uniquement par Facebook ?</Text>
