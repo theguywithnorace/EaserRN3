@@ -9,21 +9,20 @@ class Home extends React.Component {
 
     _renderTabIndicator() {
         let tabs = [{
-            iconSource: require('../Images/Login/icone_map.png'),
-            selectedIconSource: require('../Images/Login/icone_map.png'),
+            iconSource: require('../Images/HomeTabs/map.png'),
+            selectedIconSource: require('../Images/HomeTabs/map_filled.png'),
         },{
-            iconSource: require('../Images/Login/fire.png'),
-            selectedIconSource: require('../Images/Login/fire.png'),
-
-
+            iconSource: require('../Images/HomeTabs/fire.png'),
+            selectedIconSource: require('../Images/HomeTabs/fire_filled.png'),
         },{
-            iconSource: require('../Images/Login/message.png'),
-            selectedIconSource: require('../Images/Login/message.png'),
-
+            iconSource: require('../Images/HomeTabs/message.png'),
+            selectedIconSource: require('../Images/HomeTabs/message_filled.png'),
         }];
-        return <PagerTabIndicator tabs={tabs} />;
+        return <PagerTabIndicator
+            iconStyle={styles.icon_style}
+            selectedIconStyle={styles.icon_style}
+            tabs={tabs} />;
     }
-
     render() {
         return (
             <View style={{flex:1}}>
@@ -49,7 +48,13 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-    }
+    },
+    icon_style:{
+        width:35,
+        height:35,
+        resizeMode: 'contain'
+
+    },
 })
 
 export default Home
