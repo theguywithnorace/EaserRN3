@@ -40,7 +40,7 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This is the plist item for NSLocationAlwaysAndWhenInUseUsageDescription</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This is the plist item for NSLocationWhenInUseUsageDescription</string>
 	<key>UIAppFonts</key>

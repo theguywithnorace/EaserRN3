@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text,  } from 'react-native'
+import { StyleSheet, View, SafeAreaView, Text,  } from 'react-native'
 import {IndicatorViewPager,PagerTabIndicator, PagerTitleIndicator, PagerDotIndicator } from 'rn-viewpager'
 import Swiper from './Swiper'
 import Map from './Map'
@@ -26,6 +26,7 @@ class Home extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
+                <SafeAreaView>
                 <IndicatorViewPager
                     style={{flex:1,  backgroundColor:'white'}}
                     indicator={this._renderTabIndicator()}
@@ -40,6 +41,7 @@ class Home extends React.Component {
                         <Text>page three</Text>
                     </View>
                 </IndicatorViewPager>
+                </SafeAreaView>
             </View>
         )
     }

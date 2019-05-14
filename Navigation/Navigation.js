@@ -4,6 +4,7 @@ import Login from "../Activities/Login/Login"
 import WhyFb from "../Activities/Login/WhyFb";
 import Home from "../Activities/Home";
 import Swiper from "../Activities/Swiper";
+import Test from "../Activities/Test"
 
 const TestStackNavigator = createStackNavigator({
 
@@ -24,7 +25,7 @@ const TestStackNavigator = createStackNavigator({
         },
     },
     Test:{
-        screen:Swiper,
+        screen:Test,
         navigationOptions: {
         },
     }
