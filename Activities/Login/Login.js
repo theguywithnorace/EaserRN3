@@ -25,7 +25,7 @@ class Login extends React.Component{
                                       }}
                     >
                         <Image
-                            source={require('../../Images/Login/facebook-logo-small.png')}
+                            source={require('../../Images/Login/facebook_letter.png')}
                             style={styles.fBLogo}
                         />
                         <Text style={styles.text_connexion}>Connexion</Text>
@@ -80,8 +80,9 @@ const styles = StyleSheet.create({
         borderRadius:4
     },
     fBLogo:{
-        width: 30,
-        height: 30,
+        width: 24,
+        height: 29,
+        marginRight:15,
     },
     text_connexion:{
         color:'white',

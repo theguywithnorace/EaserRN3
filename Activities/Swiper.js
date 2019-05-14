@@ -28,17 +28,17 @@ class Swiper extends React.Component {
                         <TouchableOpacity style={[styles.button,styles.red]} onPress={()=>{
                             this.swiper.swipeLeft();
                         }}>
-                            <Image source={require('../Images/Login/icone_map.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
+                            <Image source={require('../Images/Swiper/cross.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,styles.orange]} onPress={() => {
                             this.swiper.goBackFromLeft();
                         }}>
-                            <Image source={require('../Images/Login/icone_map.png')} resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
+                            <Image source={require('../Images/Swiper/redo.png')} resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,styles.green]} onPress={()=>{
                             this.swiper.swipeRight();
                         }}>
-                            <Image source={require('../Images/Login/icone_map.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
+                            <Image source={require('../Images/Swiper/check.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -109,16 +109,16 @@ const styles = StyleSheet.create({
     orange:{
         width:55,
         height:55,
-        borderWidth:4,
+        borderWidth:2,
         borderRadius:55,
-        marginTop:-15
+        marginTop:-10
     },
     green:{
         width:75,
         height:75,
         backgroundColor:'#fff',
         borderRadius:75,
-        borderWidth:6,
+        borderWidth:0,
         borderColor:'#01df8a',
     },
     red:{
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         height:75,
         backgroundColor:'#fff',
         borderRadius:75,
-        borderWidth:6,
+        borderWidth:0,
         borderColor:'#fd267d',
     }
 })
