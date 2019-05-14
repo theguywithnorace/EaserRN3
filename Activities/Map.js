@@ -9,11 +9,22 @@ class Map extends React.Component {
         super();
         this.state = {
             location: null,
-            region:{},
+            region:{
+                latitude: 48.8,
+                longitude: 2.34,
+                latitudeDelta: 0.5,
+                longitudeDelta: 0.5,
+            },
         };
         this.centeringMap = false;
         this.firstLocationUpdate = true;
         this.region={};
+        this.region={
+            latitude: 48.8,
+                longitude: 2.34,
+                latitudeDelta: 0.12,
+                longitudeDelta: 0.1222,
+        };
     }
 
     componentWillMount() {
@@ -35,12 +46,11 @@ class Map extends React.Component {
         }).then(granted => {
             if (granted) {
                 this._startUpdatingLocation();
-                console.log("Compnent Will Mount")
             }
         });
     }
 
-    _startUpdatingLocation = async () => {
+    _startUpdatingLocation =  () => {
         this.locationSubscription = RNLocation.subscribeToLocationUpdates(
             locations => {
                 if (!this.centeringMap) {                   //to stop charging the position when changing the region
@@ -129,15 +139,15 @@ class Map extends React.Component {
 
                     {console.log(location.latitude)}
 
-                    <TouchableOpacity
-                        style={styles.centeringButton}
-                        onPress={()=>{this._centerMap();}}
-                    >
-                        <Image source={require('../Images/Map/center_blue.png')}
-                        style={styles.centering_image}/>
-                    </TouchableOpacity>
-                </MapView>
 
+                </MapView>
+                        <TouchableOpacity
+                            style={styles.centeringButton}
+                            onPress={()=>{this._centerMap();}}
+                        >
+                            <Image source={require('../Images/Map/center_blue.png')}
+                                   style={styles.centering_image}/>
+                        </TouchableOpacity>
 
 
                     </React.Fragment>
