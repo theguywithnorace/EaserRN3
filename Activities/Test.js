@@ -9,6 +9,8 @@ import {
     View
 } from "react-native";
 import RNLocation from "react-native-location";
+import MapView from "./Map";
+import {PROVIDER_GOOGLE} from "react-native-maps";
 
 const repoUrl = "https://github.com/timfpark/react-native-location";
 
@@ -67,15 +69,19 @@ class Test extends React.PureComponent {
         return (
             <ScrollView style={styles.container}>
                 <SafeAreaView style={styles.innerContainer}>
-                    <View style={{ alignItems: "center", marginTop: 30 }}>
-                        <Text style={styles.title}>react-native-location</Text>
-                        <TouchableHighlight
-                            onPress={this._openRepoUrl}
-                            underlayColor="#CCC"
-                            activeOpacity={0.8}
+                    <View style={styles.main_container}>
+
+                        <MapView
+                            provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+                            style={styles.map}
+                            initialRegion={{
+                                latitude: 37.78825,
+                                longitude: -122.4324,
+                                latitudeDelta: 0.015,
+                                longitudeDelta: 0.0111,
+                            }}
                         >
-                            <Text style={styles.repoLink}>{repoUrl}</Text>
-                        </TouchableHighlight>
+                        </MapView>
                     </View>
 
                     <View style={styles.row}>
@@ -96,29 +102,6 @@ class Test extends React.PureComponent {
 
                     {location && (
                         <React.Fragment>
-                            <View style={styles.row}>
-                                <View style={[styles.detailBox, styles.third]}>
-                                    <Text style={styles.valueTitle}>Course</Text>
-                                    <Text style={[styles.detail, styles.largeDetail]}>
-                                        {location.course}
-                                    </Text>
-                                </View>
-
-                                <View style={[styles.detailBox, styles.third]}>
-                                    <Text style={styles.valueTitle}>Speed</Text>
-                                    <Text style={[styles.detail, styles.largeDetail]}>
-                                        {location.speed}
-                                    </Text>
-                                </View>
-
-                                <View style={[styles.detailBox, styles.third]}>
-                                    <Text style={styles.valueTitle}>Altitude</Text>
-                                    <Text style={[styles.detail, styles.largeDetail]}>
-                                        {location.altitude}
-                                    </Text>
-                                </View>
-                            </View>
-
                             <View style={{ alignItems: "flex-start" }}>
                                 <View style={styles.row}>
                                     <View style={[styles.detailBox, styles.half]}>
@@ -130,29 +113,6 @@ class Test extends React.PureComponent {
                                         <Text style={styles.valueTitle}>Longitude</Text>
                                         <Text style={styles.detail}>{location.longitude}</Text>
                                     </View>
-                                </View>
-
-                                <View style={styles.row}>
-                                    <View style={[styles.detailBox, styles.half]}>
-                                        <Text style={styles.valueTitle}>Accuracy</Text>
-                                        <Text style={styles.detail}>{location.accuracy}</Text>
-                                    </View>
-
-                                    <View style={[styles.detailBox, styles.half]}>
-                                        <Text style={styles.valueTitle}>Altitude Accuracy</Text>
-                                        <Text style={styles.detail}>
-                                            {location.altitudeAccuracy}
-                                        </Text>
-                                    </View>
-                                </View>
-
-                                <View style={styles.row}>
-                                    <View style={[styles.detailBox, styles.half]}>
-                                        <Text style={styles.valueTitle}>Timestamp</Text>
-                                        <Text style={styles.detail}>{location.timestamp}</Text>
-                                    </View>
-
-
                                 </View>
 
                                 <View style={styles.row}>
@@ -238,6 +198,15 @@ const styles = StyleSheet.create({
     },
     third: {
         width: "33%"
-    }
+    },
+    main_container: {
+        flex: 1,
+        height: 400,
+        width: 400,
+    },
+    map: {
+        flex:1
+        //   ...StyleSheet.absoluteFillObject,
+    },
 });
 export default Test

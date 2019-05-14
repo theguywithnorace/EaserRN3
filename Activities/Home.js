@@ -26,7 +26,7 @@ class Home extends React.Component {
     render() {
         return (
             <View style={{flex:1}}>
-                <SafeAreaView>
+                <SafeAreaView style={{flex:1}}>
                 <IndicatorViewPager
                     style={{flex:1,  backgroundColor:'white'}}
                     indicator={this._renderTabIndicator()}
