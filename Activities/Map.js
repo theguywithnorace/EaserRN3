@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, Image, StyleSheet, View, Text } from 'react-native'
+import { TouchableOpacity, TouchableHighlight, Image, StyleSheet, View, Text } from 'react-native'
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import RNLocation from "react-native-location";
 
@@ -40,7 +40,7 @@ class Map extends React.Component {
         });
     }
 
-    _startUpdatingLocation = () => {
+    _startUpdatingLocation = async () => {
         this.locationSubscription = RNLocation.subscribeToLocationUpdates(
             locations => {
                 if (!this.centeringMap) {                   //to stop charging the position when changing the region
@@ -74,7 +74,13 @@ class Map extends React.Component {
         this.centerMap=true;
         console.log("centerMap pressed");
         console.log(this.centerMap)
-        this._startUpdatingLocation();
+        this.region = {
+            latitude: this.state.location.latitude,
+            longitude: this.state.location.longitude,
+            latitudeDelta: 0.02,
+            longitudeDelta: 0.0222,
+        }
+        this.setState(this.state);      //to force re-rendering at the click with the new region
     }
 
 
@@ -125,31 +131,15 @@ class Map extends React.Component {
 
                     <TouchableOpacity
                         style={styles.centeringButton}
-                        onPress={()=>{this._centerMap()}}
+                        onPress={()=>{this._centerMap();}}
                     >
+                        <Image source={require('../Images/Map/center_blue.png')}
+                        style={styles.centering_image}/>
                     </TouchableOpacity>
                 </MapView>
 
 
-                        <View style={{ alignItems: "flex-start" }}>
-                            <View style={styles.row}>
-                                <View style={[styles.detailBox, styles.half]}>
-                                    <Text style={styles.valueTitle}>Latitude</Text>
-                                    <Text style={styles.detail}>{location.latitude}</Text>
-                                </View>
 
-                                <View style={[styles.detailBox, styles.half]}>
-                                    <Text style={styles.valueTitle}>Longitude</Text>
-                                    <Text style={styles.detail}>{location.longitude}</Text>
-                                </View>
-                            </View>
-
-                            <View style={styles.row}>
-                                <View style={[styles.detailBox, styles.full]}>
-                                    <Text style={styles.json}>{JSON.stringify(location)}</Text>
-                                </View>
-                            </View>
-                        </View>
                     </React.Fragment>
                 )}
                  </View>
@@ -166,20 +156,25 @@ const styles = StyleSheet.create({
      //   ...StyleSheet.absoluteFillObject,
     },
     centeringButton:{
-        //...StyleSheet.absoluteFillObject,
-        flex:1,
-        position:'absolute',
+       position:'absolute',
         width: 50,
         height:50,
-        padding:12,
-        borderColor: '#fafafa',
-        borderWidth: 5,
+       // padding:12,
+        borderColor: '#f5f5f5',
+        borderWidth: 3,
         borderRadius: 25,
-      //  justifyContent: 'flex-end',
-     //   alignItems: 'flex-end',
+        bottom:30,
+        right:30,
         backgroundColor: 'white',
-
-}
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    centering_image:{
+        width: 21,
+        height:21,
+        alignItems:'center',
+        justifyContent:'center',
+    }
 })
 
 export default Map
