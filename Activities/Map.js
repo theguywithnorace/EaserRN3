@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import RNLocation from "react-native-location";
 
 
@@ -43,10 +43,10 @@ class Map extends React.Component {
         );
     };
 
-    _stopUpdatingLocation = () => {
+    componentWillUnmount(): void {
         this.locationSubscription && this.locationSubscription();
         this.setState({ location: null });
-    };
+    }
 
     render() {
         const {location} = this.state
@@ -58,13 +58,18 @@ class Map extends React.Component {
                 <MapView
                     provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                     style={styles.map}
-                    region={{
+                    initialRegion={{
                         latitude:location.latitude,
                         longitude:location.longitude,
                         latitudeDelta: 0.015,
                         longitudeDelta: 0.0111,
                     }}
                 >
+                    <Marker
+                        coordinate={{latitude: location.latitude, longitude: location.longitude}}
+                    />
+
+                    {console.log(location.latitude)}
                 </MapView>
 
                         <View style={{ alignItems: "flex-start" }}>
