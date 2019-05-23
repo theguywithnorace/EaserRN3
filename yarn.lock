@@ -5388,7 +5388,7 @@ rimraf@~2.2.6:
 
 "rn-viewpager@https://github.com/theguywithnorace/React-Native-ViewPager":
   version "1.2.9"
-  resolved "https://github.com/theguywithnorace/React-Native-ViewPager#a3a9e9836e4666bf510baba757315a4bb7690cd6"
+  resolved "https://github.com/theguywithnorace/React-Native-ViewPager#4ba9e7f9be9b531c51e6b0ba081042e7fed23cad"
 
 rsvp@^3.3.3:
   version "3.6.2"
