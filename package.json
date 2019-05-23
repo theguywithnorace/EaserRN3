@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "git": "^0.1.5",
     "react": "16.8.3",
     "react-native": "^0.59.8",
     "react-native-card-stack-swiper": "^1.1.0",
@@ -14,7 +15,7 @@
     "react-native-location": "^2.2.0",
     "react-native-maps": "^0.24.2",
     "react-navigation": "^3.8.1",
-    "rn-viewpager": "^1.2.9"
+    "rn-viewpager": "https://github.com/theguywithnorace/React-Native-ViewPager"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
